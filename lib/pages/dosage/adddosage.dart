@@ -6,7 +6,7 @@ class adddosage extends StatelessWidget {
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
 
-  CollectionReference ref = FirebaseFirestore.instance.collection('notes');
+  CollectionReference ref = FirebaseFirestore.instance.collection('dosages');
 
   @override
   Widget build(BuildContext context) {

@@ -35,7 +35,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final Stream<QuerySnapshot> _usersStream =
-  FirebaseFirestore.instance.collection('notes').snapshots();
+  FirebaseFirestore.instance.collection('dosages').snapshots();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
