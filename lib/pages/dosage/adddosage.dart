@@ -1,8 +1,8 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+/*import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../../main.dart';
+import '../../main.dart';*/
 
-class adddosage extends StatelessWidget {
+/*class adddosage extends StatelessWidget {
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
 
@@ -62,4 +62,4 @@ class adddosage extends StatelessWidget {
       ),
     );
   }
-}
+}*/

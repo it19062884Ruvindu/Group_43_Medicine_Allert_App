@@ -1,4 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+/*import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../main.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +36,7 @@ class _editdosageState extends State<editdosage> {
                     context, MaterialPageRoute(builder: (_) => Home()));
               });
             },
-            child: Text("save"),
+            child: Text("Update"),
           ),
           MaterialButton(
             onPressed: () {
@@ -82,4 +82,4 @@ class _editdosageState extends State<editdosage> {
       ),
     );
   }
-}
+}*/
