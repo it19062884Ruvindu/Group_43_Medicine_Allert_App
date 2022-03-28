@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 
 import '../../model/user_model.dart';
-
+import '../dosage/adddosage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Med Home"),
+        title: const Text("My Dosages"),
         centerTitle: true,
       ),
       body: Center(
@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                 child: Image.asset("assets/logo.png", fit: BoxFit.contain),
               ),
               Text(
-                "Welcome Back",
+                "WELCOME TO MY MED",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -65,6 +65,36 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.black54,
                     fontWeight: FontWeight.w500,
                   )),
+              SizedBox(
+                height: 40,
+              ),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: Row(children: <Widget>[
+                  Expanded(
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(36),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => adddosage()));
+                      },
+                      color: const Color(0xFFFCDAB7),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        alignment: Alignment.center,
+                        width: double.infinity,
+                        child: const Text(
+                          "My Dosages",
+                          style: TextStyle(color: Color(0xFF133B5C)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]),
+              ),
               SizedBox(
                 height: 15,
               ),
@@ -83,8 +113,7 @@ class _HomePageState extends State<HomePage> {
   // the logout function
   Future<void> logout(BuildContext context) async {
     await FirebaseAuth.instance.signOut();
-    Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => LoginPage()));
+    Navigator.of(context)
+        .pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
   }
 }
-

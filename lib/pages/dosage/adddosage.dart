@@ -1,8 +1,9 @@
-/*import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../../main.dart';*/
+import '../../main.dart';
+import 'dosage_list.dart';
 
-/*class adddosage extends StatelessWidget {
+class adddosage extends StatelessWidget {
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
 
@@ -20,7 +21,7 @@ import '../../main.dart';*/
                 'content': content.text,
               }).whenComplete(() {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => Home()));
+                    context, MaterialPageRoute(builder: (_) => dosagelist()));
               });
             },
             child: Text(
@@ -62,4 +63,4 @@ import '../../main.dart';*/
       ),
     );
   }
-}*/
+}

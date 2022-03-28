@@ -1,11 +1,12 @@
-/*import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../main.dart';
 import 'package:flutter/material.dart';
+
+import 'dosage_list.dart';
 
 class editdosage extends StatefulWidget {
   DocumentSnapshot docid;
   editdosage({required this.docid});
-
   @override
   _editdosageState createState() => _editdosageState();
 }
@@ -13,7 +14,6 @@ class editdosage extends StatefulWidget {
 class _editdosageState extends State<editdosage> {
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
-
   @override
   void initState() {
     title = TextEditingController(text: widget.docid.get('title'));
@@ -33,7 +33,7 @@ class _editdosageState extends State<editdosage> {
                 'content': content.text,
               }).whenComplete(() {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => Home()));
+                    context, MaterialPageRoute(builder: (_) => dosagelist()));
               });
             },
             child: Text("Update"),
@@ -42,7 +42,7 @@ class _editdosageState extends State<editdosage> {
             onPressed: () {
               widget.docid.reference.delete().whenComplete(() {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => Home()));
+                    context, MaterialPageRoute(builder: (_) => dosagelist()));
               });
             },
             child: Text("delete"),
@@ -82,4 +82,4 @@ class _editdosageState extends State<editdosage> {
       ),
     );
   }
-}*/
+}

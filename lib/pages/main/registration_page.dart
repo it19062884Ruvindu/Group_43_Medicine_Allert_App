@@ -41,13 +41,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
 
   @override
   Widget build(BuildContext context) {
-
     //firstname field
     final firstNameField = TextFormField(
       autofocus: false,
       controller: firstNameEditingController,
       keyboardType: TextInputType.name,
-
       validator: (value) {
         RegExp regex = new RegExp(r'^.{3,}$');
         if (value!.isEmpty) {
@@ -58,7 +56,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
         }
         return null;
       },
-
       onSaved: (value) {
         firstNameEditingController.text = value!;
       },
@@ -99,19 +96,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
       autofocus: false,
       controller: emailEditingController,
       keyboardType: TextInputType.emailAddress,
-
       validator: (value) {
         if (value!.isEmpty) {
           return ("Please Enter Your Email");
         }
         // reg expression for email validation
-        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
-            .hasMatch(value)) {
+        if (!RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]").hasMatch(value)) {
           return ("Please Enter a valid email");
         }
         return null;
       },
-
       onSaved: (value) {
         emailEditingController.text = value!;
       },
@@ -129,7 +123,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
       autofocus: false,
       controller: passwordEditingController,
       obscureText: true,
-
       validator: (value) {
         RegExp regex = new RegExp(r'^.{6,}$');
         if (value!.isEmpty) {
@@ -139,7 +132,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
           return ("Enter Valid Password(Min. 6 Character)");
         }
       },
-
       onSaved: (value) {
         passwordEditingController.text = value!;
       },
@@ -157,7 +149,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
       autofocus: false,
       controller: confirmPasswordEditingController,
       obscureText: true,
-
       validator: (value) {
         if (confirmPasswordEditingController.text !=
             passwordEditingController.text) {
@@ -165,7 +156,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
         }
         return null;
       },
-
       onSaved: (value) {
         confirmPasswordEditingController.text = value!;
       },
@@ -288,6 +278,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
       }
     }
   }
+
   postDetailsToFirestore() async {
     // calling our firestore
     // calling our user model
@@ -310,10 +301,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         .set(userModel.toMap());
     Fluttertoast.showToast(msg: "Account created successfully :)  ");
 
-    Navigator.pushAndRemoveUntil(
-        (context),
-        MaterialPageRoute(builder: (context) => HomePage()),
-            (route) => false);
+    Navigator.pushAndRemoveUntil((context),
+        MaterialPageRoute(builder: (context) => HomePage()), (route) => false);
   }
-
 }

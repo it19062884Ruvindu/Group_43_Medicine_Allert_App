@@ -31,6 +31,7 @@ dependencies:
   firebase_auth: ^3.3.11
   firebase_core: ^1.13.1
   fluttertoast: ^8.0.9
+  flutter_svg: ^1.0.3
   flutter:
     sdk: flutter
 
@@ -66,6 +67,7 @@ flutter:
   assets:
    - assets/logo.png
    - assets/user.jpg
+   - assets/home.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
