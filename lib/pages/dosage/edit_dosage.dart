@@ -1,13 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../../main.dart';
+
 import 'dosage_list.dart';
 
-class adddosage extends StatelessWidget {
+class EditDosage extends StatefulWidget {
+  DocumentSnapshot docid;
+  EditDosage({required this.docid});
+  @override
+  _EditDosageState createState() => _EditDosageState();
+}
+
+class _EditDosageState extends State<EditDosage> {
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
-
-  CollectionReference ref = FirebaseFirestore.instance.collection('dosages');
+  @override
+  void initState() {
+    title = TextEditingController(text: widget.docid.get('title'));
+    content = TextEditingController(text: widget.docid.get('content'));
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +27,24 @@ class adddosage extends StatelessWidget {
         actions: [
           MaterialButton(
             onPressed: () {
-              ref.add({
+              widget.docid.reference.update({
                 'title': title.text,
                 'content': content.text,
               }).whenComplete(() {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => dosagelist()));
+                    context, MaterialPageRoute(builder: (_) => Dosagelist()));
               });
             },
-            child: Text(
-              "save",
-            ),
+            child: Text("Update"),
+          ),
+          MaterialButton(
+            onPressed: () {
+              widget.docid.reference.delete().whenComplete(() {
+                Navigator.pushReplacement(
+                    context, MaterialPageRoute(builder: (_) => Dosagelist()));
+              });
+            },
+            child: Text("delete"),
           ),
         ],
       ),

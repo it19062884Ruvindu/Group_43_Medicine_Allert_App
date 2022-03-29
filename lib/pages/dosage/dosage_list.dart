@@ -1,18 +1,18 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:our_medicine_alert_43/pages/dosage/editdosage.dart';
-import 'package:our_medicine_alert_43/pages/dosage/adddosage.dart';
+import 'package:our_medicine_alert_43/pages/dosage/edit_dosage.dart';
+import 'package:our_medicine_alert_43/pages/dosage/add_dosage.dart';
 import 'package:our_medicine_alert_43/pages/dosage/dosage_read.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-class dosagelist extends StatefulWidget {
-  const dosagelist({Key? key}) : super(key: key);
+class Dosagelist extends StatefulWidget {
+  const Dosagelist({Key? key}) : super(key: key);
 
   @override
-  _dosagelistState createState() => _dosagelistState();
+  _DosagelistState createState() => _DosagelistState();
 }
 
-class _dosagelistState extends State<dosagelist> {
+class _DosagelistState extends State<Dosagelist> {
   final Stream<QuerySnapshot> _usersStream =
   FirebaseFirestore.instance.collection('dosages').snapshots();
   @override
@@ -21,7 +21,7 @@ class _dosagelistState extends State<dosagelist> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (_) => adddosage()));
+              context, MaterialPageRoute(builder: (_) => AddDosage()));
         },
         child: Icon(
           Icons.add,
@@ -55,7 +55,7 @@ class _dosagelistState extends State<dosagelist> {
                       context,
                       MaterialPageRoute(
                         builder: (_) =>
-                            editdosage(docid: snapshot.data!.docs[index]),
+                            EditDosage(docid: snapshot.data!.docs[index]),
                       ),
                     );
                   },

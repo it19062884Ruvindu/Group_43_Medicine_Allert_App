@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 
 import '../../model/user_model.dart';
-import '../dosage/adddosage.dart';
+import '../dosage/add_dosage.dart';
 import '../mymedicine/addmedicine.dart';
 
 class HomePage extends StatefulWidget {
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => adddosage()));
+                            MaterialPageRoute(builder: (_) => AddDosage()));
                       },
                       color: const Color(0xFFFCDAB7),
                       child: Container(
