@@ -5,6 +5,7 @@ import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 
 import '../../model/user_model.dart';
 import '../dosage/adddosage.dart';
+import '../mymedicine/addmedicine.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -34,7 +35,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Dosages"),
+        title: const Text("My Med"),
         centerTitle: true,
       ),
       body: Center(
@@ -95,6 +96,41 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ]),
               ),
+
+
+              //Ruvindu Added >>>>
+              SizedBox(
+                height:5,
+              ),
+              Container(
+                padding:
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                child: Row(children: <Widget>[
+                  Expanded(
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(36),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => addmedicine()));
+                      },
+                      color: const Color(0xFFFCDAB7),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        alignment: Alignment.center,
+                        width: double.infinity,
+                        child: const Text(
+                          "My Medicine Box",
+                          style: TextStyle(color: Color(0xFF133B5C)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]),
+              ),
+
+
               SizedBox(
                 height: 15,
               ),
