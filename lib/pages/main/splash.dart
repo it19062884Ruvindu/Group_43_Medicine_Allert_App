@@ -15,37 +15,37 @@ class _SplashState extends State<Splash> {
     _navigatetoLogin();
   }
 
-  _navigatetoLogin() async{
+  _navigatetoLogin() async {
     await Future.delayed(Duration(milliseconds: 4500), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage())
-    );
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => LoginPage()));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       body: Center(
-         child: Column(
-           mainAxisAlignment: MainAxisAlignment.center,
-         children: [
-           SizedBox(
-               height: 300,
-               child: Image.asset(
-                 "assets/logo.png",
-                 fit: BoxFit.contain,
-               )),
-         Container(
-         child: Text(
-           'MY MED',
-           style: TextStyle(
-               color: Colors.indigo[600],
-               fontWeight: FontWeight.bold,
-               fontSize: 30),
-         ),
-         ),
-      ],
-    ),
-       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(
+                height: 300,
+                child: Image.asset(
+                  "assets/logo.png",
+                  fit: BoxFit.contain,
+                )),
+            Container(
+              child: Text(
+                'MY MED',
+                style: TextStyle(
+                    color: Colors.indigo[600],
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

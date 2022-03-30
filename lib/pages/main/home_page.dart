@@ -2,10 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:our_medicine_alert_43/pages/dosage/dosage_list.dart';
+import 'package:our_medicine_alert_43/pages/main/animation_welcome.dart';
 import 'package:our_medicine_alert_43/pages/main/login_page.dart';
-
 import '../../model/user_model.dart';
-import '../dosage/add_dosage.dart';
 import '../mymedicine/addmedicine.dart';
 
 class HomePage extends StatefulWidget {
@@ -80,17 +79,19 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(36),
                       ),
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => Dosagelist()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => AnimationWelcome()));
                       },
-                      color: const Color(0xFFFCDAB7),
+                      color: const Color(0xFF363f93),
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
                           "My Dosages",
-                          style: TextStyle(color: Color(0xFF133B5C)),
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                       ),
                     ),
@@ -98,14 +99,13 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ),
 
-
               //Ruvindu Added >>>>
               SizedBox(
-                height:5,
+                height: 5,
               ),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 child: Row(children: <Widget>[
                   Expanded(
                     child: FlatButton(
@@ -116,14 +116,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (_) => addmedicine()));
                       },
-                      color: const Color(0xFFFCDAB7),
+                      color: const Color(0xFF363f93),
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
                           "My Medicine Box",
-                          style: TextStyle(color: Color(0xFF133B5C)),
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                       ),
                     ),
@@ -131,12 +131,13 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ),
 
-
               SizedBox(
                 height: 15,
               ),
               ActionChip(
-                  label: Text("Logout"),
+                  label: Text("Logout",
+                  style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
                   onPressed: () {
                     logout(context);
                   }),

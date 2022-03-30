@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'dosage_list.dart';
 
@@ -13,6 +14,7 @@ class EditDosage extends StatefulWidget {
 class _EditDosageState extends State<EditDosage> {
   TextEditingController title = TextEditingController();
   TextEditingController content = TextEditingController();
+
   @override
   void initState() {
     title = TextEditingController(text: widget.docid.get('title'));
@@ -33,18 +35,32 @@ class _EditDosageState extends State<EditDosage> {
               }).whenComplete(() {
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (_) => Dosagelist()));
+                Fluttertoast.showToast(msg: "Dosage Details Updated");
               });
             },
-            child: Text("Update"),
+            child: Text(
+                "Update",
+                style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+                fontSize: 15)
+            ),
           ),
           MaterialButton(
             onPressed: () {
               widget.docid.reference.delete().whenComplete(() {
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (_) => Dosagelist()));
+                Fluttertoast.showToast(msg: "Dosage Deleted Successfully");
               });
             },
-            child: Text("delete"),
+            child: Text(
+                "Delete",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15)
+            ),
           ),
         ],
       ),
@@ -52,6 +68,8 @@ class _EditDosageState extends State<EditDosage> {
         child: Column(
           children: [
             Container(
+              margin: EdgeInsets.fromLTRB(3, 9, 3, 3),
+              padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
               decoration: BoxDecoration(border: Border.all()),
               child: TextField(
                 controller: title,
@@ -65,6 +83,8 @@ class _EditDosageState extends State<EditDosage> {
             ),
             Expanded(
               child: Container(
+                margin: EdgeInsets.fromLTRB(3, 3, 3, 9),
+                padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
                 decoration: BoxDecoration(border: Border.all()),
                 child: TextField(
                   controller: content,

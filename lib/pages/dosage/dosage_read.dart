@@ -10,7 +10,6 @@ class DosageRead extends StatefulWidget {
 }
 
 class _DosageReadState extends State<DosageRead> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +18,7 @@ class _DosageReadState extends State<DosageRead> {
           Expanded(
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
-                child: Text(
-                    widget.docid.get('title')
-                )
-            ),
+                child: Text(widget.docid.get('title'))),
           ),
           const SizedBox(
             height: 10,
@@ -32,8 +28,7 @@ class _DosageReadState extends State<DosageRead> {
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
                   widget.docid.get('content'),
-                )
-            ),
+                )),
           )
         ],
       ),

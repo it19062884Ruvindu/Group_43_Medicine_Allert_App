@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:our_medicine_alert_43/pages/dosage/edit_dosage.dart';
 import 'package:our_medicine_alert_43/pages/dosage/add_dosage.dart';
-import 'package:our_medicine_alert_43/pages/dosage/dosage_read.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class Dosagelist extends StatefulWidget {
@@ -14,7 +12,7 @@ class Dosagelist extends StatefulWidget {
 
 class _DosagelistState extends State<Dosagelist> {
   final Stream<QuerySnapshot> _usersStream =
-  FirebaseFirestore.instance.collection('dosages').snapshots();
+      FirebaseFirestore.instance.collection('dosages').snapshots();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +26,7 @@ class _DosagelistState extends State<Dosagelist> {
         ),
       ),
       appBar: AppBar(
-        title: Text('My Med'),
+        title: Text('Dosage List'),
       ),
       body: StreamBuilder(
         stream: _usersStream,
@@ -105,5 +103,3 @@ class _DosagelistState extends State<Dosagelist> {
     );
   }
 }
-
-
