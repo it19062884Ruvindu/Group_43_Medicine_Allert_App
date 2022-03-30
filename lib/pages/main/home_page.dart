@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:our_medicine_alert_43/pages/dosage/dosage_list.dart';
 import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 
 import '../../model/user_model.dart';
@@ -80,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => AddDosage()));
+                            MaterialPageRoute(builder: (_) => Dosagelist()));
                       },
                       color: const Color(0xFFFCDAB7),
                       child: Container(

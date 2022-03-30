@@ -25,7 +25,11 @@ class AddDosage extends StatelessWidget {
               });
             },
             child: Text(
-              "save",
+              "SAVE",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15),
             ),
           ),
         ],
