@@ -6,7 +6,7 @@ import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 
 import '../../model/user_model.dart';
 import '../dosage/add_dosage.dart';
-import '../mymedicine/addmedicine.dart';
+import '../mymedicine/medicine_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -68,11 +68,11 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.w500,
                   )),
               SizedBox(
-                height: 40,
+                height: 20,
               ),
               Container(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                 child: Row(children: <Widget>[
                   Expanded(
                     child: FlatButton(
@@ -99,13 +99,13 @@ class _HomePageState extends State<HomePage> {
               ),
 
 
-              //Ruvindu Added >>>>
+              //Ruvindu's Part Added >>>>
               SizedBox(
                 height:5,
               ),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                 child: Row(children: <Widget>[
                   Expanded(
                     child: FlatButton(
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => addmedicine()));
+                            MaterialPageRoute(builder: (_) => medicinelist()));
                       },
                       color: const Color(0xFFFCDAB7),
                       child: Container(
@@ -132,8 +132,74 @@ class _HomePageState extends State<HomePage> {
               ),
 
 
+              //Pubudi's Part Added >>>>
               SizedBox(
-                height: 15,
+                height:5,
+              ),
+              Container(
+                padding:
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: Row(children: <Widget>[
+                  Expanded(
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(36),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => medicinelist())); // Add your Navigation Here
+                      },
+                      color: const Color(0xFFFCDAB7),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        alignment: Alignment.center,
+                        width: double.infinity,
+                        child: const Text(
+                          "Pubudi's Part",
+                          style: TextStyle(color: Color(0xFF133B5C)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]),
+              ),
+
+
+              //Yasiru's Part Added >>>>
+              SizedBox(
+                height:5,
+              ),
+              Container(
+                padding:
+                const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                child: Row(children: <Widget>[
+                  Expanded(
+                    child: FlatButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(36),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (_) => medicinelist())); // Add your Navigation Here
+                      },
+                      color: const Color(0xFFFCDAB7),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        alignment: Alignment.center,
+                        width: double.infinity,
+                        child: const Text(
+                          "Yasiru's Part",
+                          style: TextStyle(color: Color(0xFF133B5C)),
+                        ),
+                      ),
+                    ),
+                  ),
+                ]),
+              ),
+
+
+              SizedBox(
+                height: 20,
               ),
               ActionChip(
                   label: Text("Logout"),

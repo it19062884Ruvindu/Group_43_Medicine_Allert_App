@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:our_medicine_alert_43/pages/mymedicine/edit_medicine.dart';
@@ -67,12 +69,12 @@ class _medicinelistState extends State<medicinelist> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 4,
+                        height: 10,
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          left: 3,
-                          right: 3,
+                          left: 8,
+                          right: 8,
                         ),
                         child: ListTile(
 
@@ -97,8 +99,9 @@ class _medicinelistState extends State<medicinelist> {
                             ),
                           ),
 
+
                           contentPadding: EdgeInsets.symmetric(
-                            vertical: 12,
+                            vertical: 18,
                             horizontal: 16,
                           ),
 
