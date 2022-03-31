@@ -7,6 +7,7 @@ import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 import '../../model/user_model.dart';
 import '../dosage/add_dosage.dart';
 import '../mymedicine/medicine_list.dart';
+import '../mymedicine/R_Beginning.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -114,7 +115,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => medicinelist()));
+                            MaterialPageRoute(builder: (_) => RSplash()));
                       },
                       color: const Color(0xFFFCDAB7),
                       child: Container(

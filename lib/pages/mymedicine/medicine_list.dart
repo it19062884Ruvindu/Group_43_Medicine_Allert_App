@@ -89,6 +89,7 @@ class _medicinelistState extends State<medicinelist> {
                             snapshot.data!.docChanges[index].doc['medname'],
                             style: TextStyle(
                               fontSize: 20,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
 
