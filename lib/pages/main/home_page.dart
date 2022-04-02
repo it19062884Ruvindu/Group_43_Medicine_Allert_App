@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
-                          "Yasiru's Part",
+                          "Doctor Visit",
                           style: TextStyle(color: Color(0xFF133B5C)),
                         ),
                       ),
