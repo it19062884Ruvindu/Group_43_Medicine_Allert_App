@@ -8,6 +8,7 @@ import '../../model/user_model.dart';
 import '../dosage/add_dosage.dart';
 import '../mymedicine/medicine_list.dart';
 import '../mymedicine/R_Beginning.dart';
+import '../doctorvisit/channel_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -181,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => medicinelist())); // Add your Navigation Here
+                            MaterialPageRoute(builder: (_) => ChannelList())); // Add your Navigation Here
                       },
                       color: const Color(0xFFFCDAB7),
                       child: Container(
