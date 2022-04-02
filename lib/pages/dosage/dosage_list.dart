@@ -26,7 +26,7 @@ class _DosagelistState extends State<Dosagelist> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Dosage List'),
+        title: Text('My Medications'),
       ),
       body: StreamBuilder(
         stream: _usersStream,
@@ -75,13 +75,14 @@ class _DosagelistState extends State<Dosagelist> {
                             ),
                           ),
                           title: Text(
-                            snapshot.data!.docChanges[index].doc['title'],
+                            snapshot.data!.docChanges[index].doc['medicine'],
                             style: TextStyle(
                               fontSize: 20,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                           subtitle: Text(
-                            snapshot.data!.docChanges[index].doc['content'],
+                            snapshot.data!.docChanges[index].doc['unit'],
                             style: TextStyle(
                               fontSize: 15,
                             ),

@@ -119,7 +119,7 @@ class _DosageHomeState extends State<DosageHome> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "New Dosages",
+                              "New Medications",
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Color(0xFF363f93),
@@ -127,7 +127,7 @@ class _DosageHomeState extends State<DosageHome> {
                               ),
                             ),
                             Text(
-                              "Add new items here",
+                              "Add new dosage here",
                               style: TextStyle(
                                 fontSize: 14,
                                 color: Colors.grey,
@@ -197,7 +197,7 @@ class _DosageHomeState extends State<DosageHome> {
                                 height: 2,
                               ),
                               GestureDetector(
-                                child: Text("View Dosages", style: TextStyle(
+                                child: Text("View Medications", style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -241,7 +241,7 @@ class _DosageHomeState extends State<DosageHome> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Edit & Remove Dosages",
+                                "Edit & Remove Medications",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 12),
                               ),
@@ -249,7 +249,7 @@ class _DosageHomeState extends State<DosageHome> {
                                 height: 2,
                               ),
                               GestureDetector(
-                                child: Text("Change Dosage List", style: TextStyle(
+                                child: Text("Change Medications List", style: TextStyle(
                                   fontSize: 20,
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,

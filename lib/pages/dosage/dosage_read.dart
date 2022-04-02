@@ -18,7 +18,7 @@ class _DosageReadState extends State<DosageRead> {
           Expanded(
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
-                child: Text(widget.docid.get('title'))),
+                child: Text(widget.docid.get('medicine'))),
           ),
           const SizedBox(
             height: 10,
@@ -27,7 +27,7 @@ class _DosageReadState extends State<DosageRead> {
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
-                  widget.docid.get('content'),
+                  widget.docid.get('tablespoon(s)'),
                 )),
           )
         ],

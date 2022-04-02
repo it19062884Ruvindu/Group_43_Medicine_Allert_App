@@ -12,13 +12,13 @@ class EditDosage extends StatefulWidget {
 }
 
 class _EditDosageState extends State<EditDosage> {
-  TextEditingController title = TextEditingController();
-  TextEditingController content = TextEditingController();
+  TextEditingController medicine = TextEditingController();
+  TextEditingController unit = TextEditingController();
 
   @override
   void initState() {
-    title = TextEditingController(text: widget.docid.get('title'));
-    content = TextEditingController(text: widget.docid.get('content'));
+    medicine = TextEditingController(text: widget.docid.get('medicine'));
+    unit = TextEditingController(text: widget.docid.get('unit'));
     super.initState();
   }
 
@@ -30,8 +30,8 @@ class _EditDosageState extends State<EditDosage> {
           MaterialButton(
             onPressed: () {
               widget.docid.reference.update({
-                'title': title.text,
-                'content': content.text,
+                'medicine': medicine.text,
+                'unit': unit.text,
               }).whenComplete(() {
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (_) => Dosagelist()));
@@ -39,7 +39,7 @@ class _EditDosageState extends State<EditDosage> {
               });
             },
             child: Text(
-                "Update",
+                "UPDATE",
                 style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -55,7 +55,7 @@ class _EditDosageState extends State<EditDosage> {
               });
             },
             child: Text(
-                "Delete",
+                "DELETE",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -64,41 +64,74 @@ class _EditDosageState extends State<EditDosage> {
           ),
         ],
       ),
-      body: Container(
-        child: Column(
-          children: [
-            Container(
-              margin: EdgeInsets.fromLTRB(3, 9, 3, 3),
-              padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
-              decoration: BoxDecoration(border: Border.all()),
-              child: TextField(
-                controller: title,
-                decoration: InputDecoration(
-                  hintText: 'title',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Expanded(
-              child: Container(
-                margin: EdgeInsets.fromLTRB(3, 3, 3, 9),
-                padding: EdgeInsets.fromLTRB(4, 0, 4, 0),
-                decoration: BoxDecoration(border: Border.all()),
-                child: TextField(
-                  controller: content,
-                  expands: true,
-                  maxLines: null,
+      body: Center(
+        child: Container(
+          color: const Color(0xFFFFFFFF),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 34.0, right: 34.0,top: 0.0,bottom: 10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                const SizedBox(height: 25),
+                TextFormField(
+                  style: const TextStyle(
+                    color: Color(0xFF000000),
+                  ),
+                  controller: medicine,
+                  textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
-                    hintText: 'content',
+                    contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                    labelText: "Medicine name",
+                    labelStyle: const TextStyle(color: Color(0xFF000000)),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(
+                        color: Color(0xFF000000),
+                      ),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(
+                        color: Color(0xFF000000),
+                      ),
+                    ),
                   ),
                 ),
-              ),
+                const SizedBox(height: 25),
+                Expanded(
+                  child: TextFormField(
+                    controller: unit,
+                    expands: true,
+                    maxLines: null,
+                    keyboardType: TextInputType.multiline,
+                    style: const TextStyle(
+                      color: Color(0xFF000000),
+                    ),
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
+                      labelText: "tablespoon(s)",
+                      labelStyle: const TextStyle(color: Color(0xFF000000)),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF000000),
+                        ),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(
+                          color: Color(0xFF000000),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+
+              ],
             ),
-          ],
+          ),
         ),
-      ),
-    );
+      ),    );
   }
 }
