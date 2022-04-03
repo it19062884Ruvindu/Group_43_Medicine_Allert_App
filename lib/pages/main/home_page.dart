@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("My Med"),
+        backgroundColor: Colors.cyan[800],
         centerTitle: true,
       ),
       body: Center(

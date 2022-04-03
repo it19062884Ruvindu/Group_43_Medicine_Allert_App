@@ -24,6 +24,7 @@ class _DosagelistState extends State<Dosagelist> {
         child: Icon(
           Icons.add,
         ),
+
       ),
       appBar: AppBar(
         title: Text('My Medications'),

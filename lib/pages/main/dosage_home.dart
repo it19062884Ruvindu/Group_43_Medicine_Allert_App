@@ -49,7 +49,7 @@ class _DosageHomeState extends State<DosageHome> {
                     )),
                 Positioned(
                     top: 50,
-                    left: 30,
+                    left: 20,
                     child: Text(
                       "Treatment",
                       style: TextStyle(
