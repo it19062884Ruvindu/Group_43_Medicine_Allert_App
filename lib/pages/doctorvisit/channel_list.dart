@@ -2,31 +2,32 @@ import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:our_medicine_alert_43/pages/mymedicine/edit_medicine.dart';
-import 'package:our_medicine_alert_43/pages/mymedicine/addmedicine.dart';
-import 'package:our_medicine_alert_43/pages/mymedicine/medice_read.dart';
+import 'package:our_medicine_alert_43/pages/doctorvisit/edit_channel.dart';
+import 'package:our_medicine_alert_43/pages/doctorvisit/add_channel.dart';
+import 'package:our_medicine_alert_43/pages/doctorvisit/channel_read.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-class medicinelist extends StatefulWidget {
-  const medicinelist({Key? key}) : super(key: key);
+class ChannelList extends StatefulWidget {
+  const ChannelList({Key? key}) : super(key: key);
 
   @override
-  _medicinelistState createState() => _medicinelistState();
+  _ChannelListState createState() => _ChannelListState();
 }
 
-class _medicinelistState extends State<medicinelist> {
+class _ChannelListState extends State<ChannelList> {
   final Stream<QuerySnapshot> _usersStream =
-  FirebaseFirestore.instance.collection('medicines').snapshots();
+  FirebaseFirestore.instance.collection('channels').snapshots();
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (_) => addmedicine()));
+              context, MaterialPageRoute(builder: (_) => addchannel()));
         },
         child: Icon(
           Icons.add,
@@ -34,7 +35,7 @@ class _medicinelistState extends State<medicinelist> {
       ),
 
       appBar: AppBar(
-        title: Text('My Med'),
+        title: Text('My Channel'),
       ),
 
       body: StreamBuilder(
@@ -62,7 +63,7 @@ class _medicinelistState extends State<medicinelist> {
                       context,
                       MaterialPageRoute(
                         builder: (_) =>
-                            editmedicine(docid: snapshot.data!.docs[index]),
+                            EditChannel(docid: snapshot.data!.docs[index]),
                       ),
                     );
                   },
@@ -86,7 +87,7 @@ class _medicinelistState extends State<medicinelist> {
                           ),
 
                           title: Text(
-                            snapshot.data!.docChanges[index].doc['medname'],
+                            snapshot.data!.docChanges[index].doc['channelName'],
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -121,5 +122,3 @@ class _medicinelistState extends State<medicinelist> {
     );
   }
 }
-
-

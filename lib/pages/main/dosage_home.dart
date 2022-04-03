@@ -21,14 +21,14 @@ class _DosageHomeState extends State<DosageHome> {
       body: Column(
         children: [
           Container(
-            height: 180,
+            height: 120,
             decoration: BoxDecoration(
                 borderRadius:
                     BorderRadius.only(bottomRight: Radius.circular(50)),
-                color: Color(0xFF363f93),
+                color: Color(0xFF006064),
                 boxShadow: [
                   new BoxShadow(
-                    color: Color(0xFF363f93).withOpacity(0.3),
+                    color: Color(0xFF006064).withOpacity(0.3),
                     offset: new Offset(-10.0, 10.0),
                     spreadRadius: 4.0,
                     blurRadius: 20.0, // changes position of shadow
@@ -37,11 +37,11 @@ class _DosageHomeState extends State<DosageHome> {
             child: Stack(
               children: [
                 Positioned(
-                    top: 80,
+                    top: 40,
                     left: 0,
                     child: Container(
-                      height: 60,
-                      width: 300,
+                      height: 45,
+                      width: 250,
                       decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.only(
@@ -50,10 +50,10 @@ class _DosageHomeState extends State<DosageHome> {
                           )),
                     )),
                 Positioned(
-                    top: 100,
-                    left: 20,
+                    top: 50,
+                    left: 30,
                     child: Text(
-                      "Your Dosages",
+                      "Treatment",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -66,15 +66,15 @@ class _DosageHomeState extends State<DosageHome> {
             height: height * 0.05,
           ),
           Container(
-              height: 230,
+              height: 200,
               child: Stack(
                 children: [
                   Positioned(
-                      top: 35,
+                      top: 25,
                       left: 20,
                       child: Material(
                         child: Container(
-                          height: 180.0,
+                          height: 160.0,
                           width: width * 0.9,
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -100,8 +100,8 @@ class _DosageHomeState extends State<DosageHome> {
                           borderRadius: BorderRadius.circular(15.0),
                         ),
                         child: Container(
-                          height: 200,
-                          width: 150,
+                          height: 180,
+                          width: 130,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
                               image: DecorationImage(
@@ -111,7 +111,7 @@ class _DosageHomeState extends State<DosageHome> {
                       )),
                   Positioned(
                       top: 60,
-                      left: 200,
+                      left: 175,
                       child: Container(
                         height: 150,
                         width: 140,
@@ -119,7 +119,7 @@ class _DosageHomeState extends State<DosageHome> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "New Medications",
+                              "My Medications",
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Color(0xFF363f93),
@@ -127,21 +127,19 @@ class _DosageHomeState extends State<DosageHome> {
                               ),
                             ),
                             Text(
-                              "Add new dosage here",
+                              "Keep track your medications",
                               style: TextStyle(
                                 fontSize: 14,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
                               ),
                             ),
                             Divider(
                               color: Colors.black,
                             ),
                             GestureDetector(
-                              child: Text("Click here to add", style: TextStyle(
+                              child: Text("Be reminded on time", style: TextStyle(
                                 fontSize: 14,
-                                color: Colors.blueAccent,
-                                fontWeight: FontWeight.bold,
+                                color: Colors.grey,
                               ), ),
                               onTap: () {
                                 Navigator.push(
