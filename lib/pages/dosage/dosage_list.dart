@@ -24,10 +24,15 @@ class _DosagelistState extends State<Dosagelist> {
         child: Icon(
           Icons.add,
         ),
-
       ),
       appBar: AppBar(
-        title: Text('My Medications'),
+        title: const Text(
+          "Add Medications",
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        backgroundColor: Colors.cyan[800],
+        centerTitle: true,
       ),
       body: StreamBuilder(
         stream: _usersStream,

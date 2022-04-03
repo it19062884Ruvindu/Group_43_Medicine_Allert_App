@@ -26,6 +26,13 @@ class _EditDosageState extends State<EditDosage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          "My Med",
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        backgroundColor: Colors.cyan[800],
+        centerTitle: true,
         actions: [
           MaterialButton(
             onPressed: () {
