@@ -73,6 +73,10 @@ flutter:
    - assets/dosage.png
    - assets/home.svg
    - assets/r4.png
+   - assets/r3.png
+   - assets/r8.jpg
+   - assets/r6.png
+   - assets/r7.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

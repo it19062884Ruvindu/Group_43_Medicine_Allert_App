@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:our_medicine_alert_43/pages/mymedicine/medicine_list.dart';
+import 'package:our_medicine_alert_43/pages/mymedicine/mymedcine_home.dart';
 
 class RSplash extends StatefulWidget {
   const RSplash({Key? key}) : super(key: key);
@@ -17,7 +17,7 @@ class _RSplashState extends State<RSplash> {
 
   _navigatetoR() async{
     await Future.delayed(Duration(milliseconds: 2500), () {});
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>medicinelist())
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> MedicineHome())
     );
   }
 
@@ -29,9 +29,9 @@ class _RSplashState extends State<RSplash> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-                height: 100,
+                height: 200,
                 child: Image.asset(
-                  "assets/r4.png",
+                  "assets/r6.png",
                   fit: BoxFit.contain,
                 )),
 
@@ -43,9 +43,9 @@ class _RSplashState extends State<RSplash> {
               child: Text(
                 'MY MEDICIE LIST',
                 style: TextStyle(
-                    color: Colors.indigo[600],
+                    color: Color(0xFF00838F),
                     fontWeight: FontWeight.bold,
-                    fontSize: 25),
+                    fontSize: 20),
               ),
             ),
           ],

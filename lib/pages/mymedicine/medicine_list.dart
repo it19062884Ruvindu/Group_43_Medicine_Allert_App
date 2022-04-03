@@ -57,6 +57,7 @@ class _medicinelistState extends State<medicinelist> {
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (_, index) {
                 return GestureDetector(
+
                   onTap: () {
                     Navigator.pushReplacement(
                       context,
@@ -66,16 +67,21 @@ class _medicinelistState extends State<medicinelist> {
                       ),
                     );
                   },
+
+
                   child: Column(
                     children: [
+
                       SizedBox(
                         height: 10,
                       ),
+
                       Padding(
                         padding: EdgeInsets.only(
                           left: 8,
                           right: 8,
                         ),
+
                         child: ListTile(
 
                           shape: RoundedRectangleBorder(
