@@ -98,6 +98,7 @@ class _HomePageState extends State<HomePage> {
                         width: double.infinity,
                         child: const Text(
                           "Treatments",
+
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
