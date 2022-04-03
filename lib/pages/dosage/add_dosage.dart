@@ -12,7 +12,7 @@ class AddDosage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0D47A1),
+      backgroundColor: const Color(0xFF00838F),
       appBar: AppBar(
         title: const Text("Add medication"),
         titleTextStyle: const TextStyle(
@@ -41,18 +41,18 @@ class AddDosage extends StatelessWidget {
                 const SizedBox(height: 25),
                 TextFormField(
                   style: const TextStyle(
-                    color: Color(0xFF000000),
+                    color: Color(0xFF00838F),
                   ),
                   controller: medicine,
                   textInputAction: TextInputAction.next,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                    labelText: "Medicine name",
+                    labelText: "Medication name",
                     labelStyle: const TextStyle(color: Color(0xFF000000)),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: const BorderSide(
-                        color: Color(0xFF000000),
+                        color: Color(0xFF00838F),
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
@@ -71,16 +71,16 @@ class AddDosage extends StatelessWidget {
                     maxLines: null,
                     keyboardType: TextInputType.multiline,
                     style: const TextStyle(
-                      color: Color(0xFF000000),
+                      color: Color(0xFF00838F),
                     ),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                      labelText: "tablespoon(s)",
+                      labelText: "Unit",
                       labelStyle: const TextStyle(color: Color(0xFF000000)),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: const BorderSide(
-                          color: Color(0xFF000000),
+                          color: Color(0xFF00838F),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(
@@ -96,7 +96,7 @@ class AddDosage extends StatelessWidget {
                 Material(
                   elevation: 5,
                   borderRadius: BorderRadius.circular(30),
-                  color: const Color(0xFF0D47A1),
+                  color: const Color(0xFF00838F),
                   child: MaterialButton(
                     padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
                     minWidth: MediaQuery.of(context).size.width,

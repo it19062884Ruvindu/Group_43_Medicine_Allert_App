@@ -16,7 +16,7 @@ class _SplashState extends State<Splash> {
   }
 
   _navigatetoLogin() async {
-    await Future.delayed(Duration(milliseconds: 4500), () {});
+    await Future.delayed(Duration(milliseconds: 9000), () {});
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => LoginPage()));
   }
@@ -38,7 +38,7 @@ class _SplashState extends State<Splash> {
               child: Text(
                 'MY MED',
                 style: TextStyle(
-                    color: Colors.indigo[600],
+                    color: Colors.cyan[800],
                     fontWeight: FontWeight.bold,
                     fontSize: 30),
               ),

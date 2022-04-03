@@ -38,13 +38,11 @@ class _EditDosageState extends State<EditDosage> {
                 Fluttertoast.showToast(msg: "Dosage Details Updated");
               });
             },
-            child: Text(
-                "UPDATE",
+            child: Text("UPDATE",
                 style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 15)
-            ),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15)),
           ),
           MaterialButton(
             onPressed: () {
@@ -54,13 +52,11 @@ class _EditDosageState extends State<EditDosage> {
                 Fluttertoast.showToast(msg: "Dosage Deleted Successfully");
               });
             },
-            child: Text(
-                "DELETE",
+            child: Text("DELETE",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15)
-            ),
+                    fontSize: 15)),
           ),
         ],
       ),
@@ -68,7 +64,8 @@ class _EditDosageState extends State<EditDosage> {
         child: Container(
           color: const Color(0xFFFFFFFF),
           child: Padding(
-            padding: const EdgeInsets.only(left: 34.0, right: 34.0,top: 0.0,bottom: 10.0),
+            padding: const EdgeInsets.only(
+                left: 34.0, right: 34.0, top: 0.0, bottom: 10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -127,11 +124,11 @@ class _EditDosageState extends State<EditDosage> {
                     ),
                   ),
                 ),
-
               ],
             ),
           ),
         ),
-      ),    );
+      ),
+    );
   }
 }

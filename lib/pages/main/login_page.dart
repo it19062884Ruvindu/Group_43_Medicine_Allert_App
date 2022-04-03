@@ -83,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.indigo[600],
+      color: Colors.cyan[800],
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
@@ -140,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: Text(
                               "SignUp",
                               style: TextStyle(
-                                  color: Colors.indigo[600],
+                                  color: Colors.cyan[800],
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15),
                             ),

@@ -172,7 +172,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.indigo[600],
+      color: Colors.cyan[800],
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
@@ -193,7 +193,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.blue),
+          icon: Icon(Icons.arrow_back, color: Colors.cyan[800]),
           onPressed: () {
             // passing this to our root
             Navigator.of(context).pop();

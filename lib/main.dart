@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 import 'package:our_medicine_alert_43/pages/main/splash.dart';
 
 Future<void> main() async {
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "My Med",
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.cyan,
       ),
       home: Splash(),
     );

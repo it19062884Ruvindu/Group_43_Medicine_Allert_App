@@ -47,8 +47,12 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              SizedBox(
+                height: 100,
+                child: Image.asset("assets/logo.png", fit: BoxFit.contain),
+              ),
               Text(
-                "WELCOME TO MY MED",
+                "Welcome to MyMed",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               SizedBox(
@@ -82,14 +86,17 @@ class _HomePageState extends State<HomePage> {
                             MaterialPageRoute(
                                 builder: (_) => AnimationWelcome()));
                       },
-                      color: const Color(0xFF363f93),
+                      color: const Color(0xFF00838F),
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
                           "Treatments",
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
                         ),
                       ),
                     ),
@@ -99,14 +106,13 @@ class _HomePageState extends State<HomePage> {
 
               //Ruvindu Added >>>>
 
-
               //Ruvindu's Part Added >>>>
               SizedBox(
                 height: 5,
               ),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                 child: Row(children: <Widget>[
                   Expanded(
                     child: FlatButton(
@@ -117,21 +123,23 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (_) => RSplash()));
                       },
-                      color: const Color(0xFF363f93),
+                      color: const Color(0xFF00838F),
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
                           "My Medicine Box",
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
                         ),
                       ),
                     ),
                   ),
                 ]),
               ),
-
 
               //Pubudi's Part Added >>>>
               SizedBox(
@@ -139,7 +147,7 @@ class _HomePageState extends State<HomePage> {
               ),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                 child: Row(children: <Widget>[
                   Expanded(
                     child: FlatButton(
@@ -150,14 +158,17 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (_) => RSplash()));
                       },
-                      color: const Color(0xFF363f93),
+                      color: const Color(0xFF00838F),
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
                           "My Medicine Box",
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
                         ),
                       ),
                     ),
@@ -165,14 +176,13 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ),
 
-
               //Yasiru's Part Added >>>>
               SizedBox(
                 height: 5,
               ),
               Container(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
                 child: Row(children: <Widget>[
                   Expanded(
                     child: FlatButton(
@@ -183,14 +193,17 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (_) => addchannel()));
                       },
-                      color: const Color(0xFF363f93),
+                      color: const Color(0xFF00838F),
                       child: Container(
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
                           "My Medicine Box",
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 16),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16),
                         ),
                       ),
                     ),
@@ -198,13 +211,16 @@ class _HomePageState extends State<HomePage> {
                 ]),
               ),
 
-
               SizedBox(
                 height: 20,
               ),
               ActionChip(
-                  label: Text("Logout",
-                  style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold, fontSize: 16),
+                  label: Text(
+                    "Logout",
+                    style: TextStyle(
+                        color: Colors.cyan[800],
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
                   ),
                   onPressed: () {
                     logout(context);

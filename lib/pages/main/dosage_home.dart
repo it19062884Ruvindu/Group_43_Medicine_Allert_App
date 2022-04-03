@@ -1,8 +1,6 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:our_medicine_alert_43/pages/dosage/add_dosage.dart';
 import 'package:our_medicine_alert_43/pages/dosage/dosage_list.dart';
-import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 
 class DosageHome extends StatefulWidget {
   const DosageHome({Key? key}) : super(key: key);
@@ -25,7 +23,7 @@ class _DosageHomeState extends State<DosageHome> {
             decoration: BoxDecoration(
                 borderRadius:
                     BorderRadius.only(bottomRight: Radius.circular(50)),
-                color: Color(0xFF006064),
+                color: Color(0xFF00838F),
                 boxShadow: [
                   new BoxShadow(
                     color: Color(0xFF006064).withOpacity(0.3),
@@ -57,7 +55,7 @@ class _DosageHomeState extends State<DosageHome> {
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Color(0xFF363f93)),
+                          color: Color(0xFF00838F)),
                     ))
               ],
             ),
@@ -100,7 +98,7 @@ class _DosageHomeState extends State<DosageHome> {
                           borderRadius: BorderRadius.circular(15.0),
                         ),
                         child: Container(
-                          height: 180,
+                          height: 160,
                           width: 130,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.0),
@@ -119,34 +117,29 @@ class _DosageHomeState extends State<DosageHome> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "My Medications",
+                              "My Treatment",
                               style: TextStyle(
                                 fontSize: 16,
-                                color: Color(0xFF363f93),
+                                color: Color(0xFF00838F),
                                 fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "Keep track your medications",
-                              style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.black,
                               ),
                             ),
                             Divider(
                               color: Colors.black,
                             ),
                             GestureDetector(
-                              child: Text("Be reminded on time", style: TextStyle(
-                                fontSize: 14,
-                                color: Colors.grey,
-                              ), ),
+                              child: Text(
+                                " Keep track your medications and be reminded on time",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.grey,
+                                ),
+                              ),
                               onTap: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>
-                                            AddDosage()));
+                                        builder: (context) => Dosagelist()));
                               },
                             )
                           ],
@@ -162,32 +155,32 @@ class _DosageHomeState extends State<DosageHome> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 10, top: 25),
-                        height: 200,
+                        height: 150,
                         padding: const EdgeInsets.only(
                             left: 20, right: 20, bottom: 20),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Color(0xFF363f93),
+                              color: Color(0xFF00838F),
                               borderRadius: const BorderRadius.only(
                                 bottomLeft: Radius.circular(80.0),
                               ),
                               boxShadow: [
                                 new BoxShadow(
-                                    color: Color(0xFF363f93).withOpacity(0.3),
+                                    color: Color(0xFF00838F).withOpacity(0.3),
                                     offset: new Offset(-10.0, 0.0),
                                     blurRadius: 20.0,
                                     spreadRadius: 4.0),
                               ]),
                           padding: const EdgeInsets.only(
                             left: 32,
-                            top: 50.0,
+                            top: 40.0,
                             bottom: 50,
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Recently added",
+                                "Add new",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 12),
                               ),
@@ -195,17 +188,19 @@ class _DosageHomeState extends State<DosageHome> {
                                 height: 2,
                               ),
                               GestureDetector(
-                                child: Text("View Medications", style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ), ),
+                                child: Text(
+                                  "Add Treatment",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                                 onTap: () {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              Dosagelist()));
+                                          builder: (context) => AddDosage()));
                                 },
                               )
                             ],
@@ -214,32 +209,32 @@ class _DosageHomeState extends State<DosageHome> {
                       ),
                       Container(
                         margin: const EdgeInsets.only(bottom: 10, top: 25),
-                        height: 200,
+                        height: 150,
                         padding: const EdgeInsets.only(
                             left: 20, right: 20, bottom: 20),
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Color(0xFF363f93),
+                              color: Color(0xFF00838F),
                               borderRadius: const BorderRadius.only(
                                 topRight: Radius.circular(80.0),
                               ),
                               boxShadow: [
                                 new BoxShadow(
-                                    color: Color(0xFF363f93).withOpacity(0.3),
+                                    color: Color(0xFF00838F).withOpacity(0.3),
                                     offset: new Offset(-10.0, 0.0),
                                     blurRadius: 20.0,
                                     spreadRadius: 4.0),
                               ]),
                           padding: const EdgeInsets.only(
                             left: 32,
-                            top: 50.0,
+                            top: 40.0,
                             bottom: 50,
                           ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Edit & Remove Medications",
+                                "Edit & remove",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 12),
                               ),
@@ -247,17 +242,19 @@ class _DosageHomeState extends State<DosageHome> {
                                 height: 2,
                               ),
                               GestureDetector(
-                                child: Text("Change Medications List", style: TextStyle(
-                                  fontSize: 20,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ), ),
+                                child: Text(
+                                  "Change Treatment",
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
                                 onTap: () {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              Dosagelist()));
+                                          builder: (context) => Dosagelist()));
                                 },
                               )
                             ],
