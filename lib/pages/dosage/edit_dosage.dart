@@ -26,13 +26,15 @@ class _EditDosageState extends State<EditDosage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "My Med",
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        backgroundColor: Colors.cyan[800],
+        backgroundColor: const Color(0xFF00838F),
         centerTitle: true,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+        ),
         actions: [
           MaterialButton(
             onPressed: () {
@@ -81,6 +83,7 @@ class _EditDosageState extends State<EditDosage> {
                 TextFormField(
                   style: const TextStyle(
                     color: Color(0xFF000000),
+                    fontWeight: FontWeight.bold,
                   ),
                   controller: medicine,
                   textInputAction: TextInputAction.next,
@@ -91,7 +94,7 @@ class _EditDosageState extends State<EditDosage> {
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                       borderSide: const BorderSide(
-                        color: Color(0xFF000000),
+                        color: Color(0xFF00838F),
                       ),
                     ),
                     enabledBorder: OutlineInputBorder(
@@ -114,12 +117,12 @@ class _EditDosageState extends State<EditDosage> {
                     ),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-                      labelText: "tablespoon(s)",
+                      labelText: "Unit",
                       labelStyle: const TextStyle(color: Color(0xFF000000)),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(10),
                         borderSide: const BorderSide(
-                          color: Color(0xFF000000),
+                          color: Color(0xFF00838F),
                         ),
                       ),
                       enabledBorder: OutlineInputBorder(

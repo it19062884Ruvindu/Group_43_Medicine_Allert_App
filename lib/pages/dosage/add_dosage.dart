@@ -21,6 +21,7 @@ class AddDosage extends StatelessWidget {
           fontSize: 20,
         ),
         backgroundColor: Colors.transparent,
+        centerTitle: true,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
@@ -42,6 +43,7 @@ class AddDosage extends StatelessWidget {
                 TextFormField(
                   style: const TextStyle(
                     color: Color(0xFF00838F),
+                    fontWeight: FontWeight.bold,
                   ),
                   controller: medicine,
                   textInputAction: TextInputAction.next,

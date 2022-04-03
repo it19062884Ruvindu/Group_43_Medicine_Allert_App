@@ -134,7 +134,7 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
-                          "My Medicine Box",
+                          "Medicines",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
-                          "My Medicine Box",
+                          "Vaccinations",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -204,7 +204,7 @@ class _HomePageState extends State<HomePage> {
                         alignment: Alignment.center,
                         width: double.infinity,
                         child: const Text(
-                          "My Medicine Box",
+                          "Appointments",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,

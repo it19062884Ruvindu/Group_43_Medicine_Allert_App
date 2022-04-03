@@ -21,18 +21,32 @@ class _DosagelistState extends State<Dosagelist> {
           Navigator.pushReplacement(
               context, MaterialPageRoute(builder: (_) => AddDosage()));
         },
-        child: Icon(
-          Icons.add,
+        child: Row(
+          // Replace with a Row for horizontal icon + text
+          children: <Widget>[Icon(Icons.add), Text("ADD",  style: TextStyle(
+            fontSize: 12,
+            color: Colors.white,
+          ), )],
         ),
       ),
       appBar: AppBar(
-        title: const Text(
-          "Add Medications",
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
-        ),
-        backgroundColor: Colors.cyan[800],
+        backgroundColor: const Color(0xFF00838F),
         centerTitle: true,
+        title: const Text("My Treatments"),
+        titleTextStyle: const TextStyle(
+          color: Color(0xFFFFFFFF),
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+
+        ),
+        //backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+        ),
       ),
       body: StreamBuilder(
         stream: _usersStream,
