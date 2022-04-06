@@ -77,6 +77,9 @@ flutter:
    - assets/r8.jpg
    - assets/r6.png
    - assets/r7.png
+   - assets/appointment.jpg
+   - assets/appointment_add.jpg
+   - assets/Appointment_edit.jpg
    - assets/vax.jpeg
    - assets/vc.jpeg
 

@@ -18,7 +18,7 @@ class ChannelList extends StatefulWidget {
 
 class _ChannelListState extends State<ChannelList> {
   final Stream<QuerySnapshot> _usersStream =
-  FirebaseFirestore.instance.collection('channels').snapshots();
+  FirebaseFirestore.instance.collection('appointment').snapshots();
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _ChannelListState extends State<ChannelList> {
       ),
 
       appBar: AppBar(
-        title: Text('My Channel'),
+        title: Text('My Appointments'),
       ),
 
       body: StreamBuilder(
@@ -87,7 +87,7 @@ class _ChannelListState extends State<ChannelList> {
                           ),
 
                           title: Text(
-                            snapshot.data!.docChanges[index].doc['channelName'],
+                            snapshot.data!.docChanges[index].doc['appointmentType'],
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class _ChannelListState extends State<ChannelList> {
                           ),
 
                           subtitle: Text(
-                            snapshot.data!.docChanges[index].doc['content'],
+                            snapshot.data!.docChanges[index].doc['appointmentDetails'],
                             style: TextStyle(
                               fontSize: 15,
                             ),
