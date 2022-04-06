@@ -21,7 +21,7 @@ class _ChannelReadState extends State<ChannelRead> {
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
-                    widget.docid.get('channelName')
+                    widget.docid.get('appointmentType')
                 )
             ),
           ),
@@ -35,7 +35,7 @@ class _ChannelReadState extends State<ChannelRead> {
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
-                    widget.docid.get('channelType')
+                    widget.docid.get('patientName')
                 )
             ),
           ),
@@ -49,7 +49,7 @@ class _ChannelReadState extends State<ChannelRead> {
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
-                    widget.docid.get('channelBrand')
+                    widget.docid.get('patientAge')
                 )
             ),
           ),
@@ -63,7 +63,7 @@ class _ChannelReadState extends State<ChannelRead> {
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
-                    widget.docid.get('channelAmount')
+                    widget.docid.get('patientMobile')
                 )
             ),
           ),
@@ -77,7 +77,7 @@ class _ChannelReadState extends State<ChannelRead> {
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
-                    widget.docid.get('channelExpire')
+                    widget.docid.get('appointmentDate')
                 )
             ),
           ),
@@ -92,7 +92,7 @@ class _ChannelReadState extends State<ChannelRead> {
             child: Container(
                 decoration: BoxDecoration(border: Border.all()),
                 child: Text(
-                  widget.docid.get('content'),
+                  widget.docid.get('appointmentDetails'),
                 )
             ),
           )

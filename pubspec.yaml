@@ -81,6 +81,9 @@ flutter:
    - assets/r7.png
    - assets/appointment.jpg
    - assets/appointment_add.jpg
+   - assets/Appointment_edit.jpg
+   - assets/vax.jpeg
+   - assets/vc.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
