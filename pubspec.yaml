@@ -77,6 +77,8 @@ flutter:
    - assets/r8.jpg
    - assets/r6.png
    - assets/r7.png
+   - assets/vax.jpeg
+   - assets/vc.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

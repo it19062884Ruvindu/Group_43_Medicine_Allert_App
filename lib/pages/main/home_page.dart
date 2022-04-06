@@ -8,6 +8,7 @@ import '../doctorvisit/add_channel.dart';
 import '../mymedicine/medicine_list.dart';
 import '../mymedicine/R_Beginning.dart';
 import '../doctorvisit/channel_list.dart';
+import '../vaccination/ui/vaccination_splash_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -162,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => RSplash()));
+                            MaterialPageRoute(builder: (_) => VaccinationSplash()));
                       },
                       color: const Color(0xFF00838F),
                       child: Container(
