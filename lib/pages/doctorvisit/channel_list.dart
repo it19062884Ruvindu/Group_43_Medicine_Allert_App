@@ -35,8 +35,25 @@ class _ChannelListState extends State<ChannelList> {
       ),
 
       appBar: AppBar(
-        title: Text('My Appointments'),
+        title: const Text("Appointments"),
+        titleTextStyle: const TextStyle(
+          color: Color(0xFFFFFFFF),
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
+        backgroundColor: Color(0xFF00838F),
+        centerTitle: true,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+        ),
       ),
+
+
+
 
       body: StreamBuilder(
         stream: _usersStream,
@@ -74,15 +91,22 @@ class _ChannelListState extends State<ChannelList> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          left: 8,
-                          right: 8,
+                          left: 20,
+                          right: 20,
+                          top: 2,
+                          bottom: 2,
                         ),
                         child: ListTile(
+                          leading: Icon(
+                            Icons.access_alarms_sharp,
+                            color: Color(0xFF00838F),
+                            size: 50.0,
+                          ),
 
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(20),
                             side: BorderSide(
-                              color: Colors.black,
+                              color: Color(0xFF00838F),
                             ),
                           ),
 
@@ -91,23 +115,28 @@ class _ChannelListState extends State<ChannelList> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
+                              color: Color(0xFF00838F),
                             ),
+                            textAlign: TextAlign.center,
                           ),
+
 
                           subtitle: Text(
                             snapshot.data!.docChanges[index].doc['appointmentDetails'],
                             style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 14,
                             ),
                           ),
 
-
                           contentPadding: EdgeInsets.symmetric(
-                            vertical: 18,
-                            horizontal: 16,
+                            vertical: 5,
+                            horizontal: 5,
                           ),
 
+
+
                         ),
+
                       ),
 
                     ],
