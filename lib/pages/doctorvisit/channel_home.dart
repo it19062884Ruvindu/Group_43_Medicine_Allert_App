@@ -57,7 +57,7 @@ class _ChannelHomeState extends State<ChannelHome> {
                     top: 50,
                     left: 20,
                     child: Text(
-                      "My Medicine Box",
+                      "My Appointment",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -113,7 +113,7 @@ class _ChannelHomeState extends State<ChannelHome> {
                               borderRadius: BorderRadius.circular(10.0),
                               image: DecorationImage(
                                   fit: BoxFit.fill,
-                                  image: AssetImage("assets/r8.jpg"))),
+                                  image: AssetImage("assets/appointment.jpg"))),
                         ),
                       )),
 
@@ -129,23 +129,23 @@ class _ChannelHomeState extends State<ChannelHome> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "On My Box Now",
+                              "On My Appointment",
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 15,
                                 color: Color(0xFF00838F),
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
 
                             Divider(
-                              color: Colors.black,
+                              color: Color(0xFF00838F),
                             ),
 
                             GestureDetector(
                               child: Text(
-                                " The Medicines that you have with yourself",
+                                "Scheduled day and time for an individual to be treated by a physician",
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 13,
                                   color: Colors.grey,
                                 ),
                               ),
@@ -208,9 +208,9 @@ class _ChannelHomeState extends State<ChannelHome> {
                               ),
                               GestureDetector(
                                 child: Text(
-                                  "Add Medicine to the Box",
+                                  "Add Appointment",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -267,9 +267,9 @@ class _ChannelHomeState extends State<ChannelHome> {
                               ),
                               GestureDetector(
                                 child: Text(
-                                  "Update Medicine in My Box",
+                                  "Update & Remove Appointment",
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 18,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                   ),
