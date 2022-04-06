@@ -163,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => RSplash()));
+                            MaterialPageRoute(builder: (_) => VaccinationSplash()));
                       },
                       color: const Color(0xFF00838F),
                       child: Container(
