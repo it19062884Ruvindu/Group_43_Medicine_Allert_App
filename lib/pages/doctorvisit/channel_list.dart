@@ -31,6 +31,7 @@ class _ChannelListState extends State<ChannelList> {
         },
         child: Icon(
           Icons.add,
+          color: Color(0xFFFFFFFF),
         ),
       ),
 
@@ -132,15 +133,9 @@ class _ChannelListState extends State<ChannelList> {
                             vertical: 5,
                             horizontal: 5,
                           ),
-
-
-
                         ),
-
                       ),
-
                     ],
-
                   ),
                 );
               },
