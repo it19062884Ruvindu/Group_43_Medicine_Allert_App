@@ -44,28 +44,28 @@ class _EditDosageState extends State<EditDosage> {
               }).whenComplete(() {
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (_) => Dosagelist()));
-                Fluttertoast.showToast(msg: "Dosage Details Updated");
+                Fluttertoast.showToast(msg: "Your medication has updated");
               });
             },
             child: Text("UPDATE",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15)),
+                    fontSize: 16)),
           ),
           MaterialButton(
             onPressed: () {
               widget.docid.reference.delete().whenComplete(() {
                 Navigator.pushReplacement(
                     context, MaterialPageRoute(builder: (_) => Dosagelist()));
-                Fluttertoast.showToast(msg: "Dosage Deleted Successfully");
+                Fluttertoast.showToast(msg: "Medication has removed");
               });
             },
             child: Text("DELETE",
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.red,
                     fontWeight: FontWeight.bold,
-                    fontSize: 15)),
+                    fontSize: 16)),
           ),
         ],
       ),
@@ -82,7 +82,7 @@ class _EditDosageState extends State<EditDosage> {
                 const SizedBox(height: 25),
                 TextFormField(
                   style: const TextStyle(
-                    color: Color(0xFF000000),
+                    color: Color(0xFF00838F),
                     fontWeight: FontWeight.bold,
                   ),
                   controller: medicine,
@@ -113,7 +113,7 @@ class _EditDosageState extends State<EditDosage> {
                     maxLines: null,
                     keyboardType: TextInputType.multiline,
                     style: const TextStyle(
-                      color: Color(0xFF000000),
+                      color: Color(0xFF00838F),
                     ),
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),

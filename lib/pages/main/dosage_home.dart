@@ -51,7 +51,7 @@ class _DosageHomeState extends State<DosageHome> {
                     top: 50,
                     left: 20,
                     child: Text(
-                      "Treatment",
+                      "My Daily Treatments",
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -116,13 +116,21 @@ class _DosageHomeState extends State<DosageHome> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
-                              "My Treatment",
-                              style: TextStyle(
-                                fontSize: 16,
-                                color: Color(0xFF00838F),
-                                fontWeight: FontWeight.bold,
+                            GestureDetector(
+                              child: Text(
+                                "All Treatments",
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  color: Color(0xFF00838F),
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Dosagelist()));
+                              },
                             ),
                             Divider(
                               color: Colors.black,
@@ -180,7 +188,7 @@ class _DosageHomeState extends State<DosageHome> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Add new",
+                                "Add to the list",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 12),
                               ),
@@ -189,7 +197,7 @@ class _DosageHomeState extends State<DosageHome> {
                               ),
                               GestureDetector(
                                 child: Text(
-                                  "Add Treatment",
+                                  "Add New Treatments",
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,
@@ -243,7 +251,7 @@ class _DosageHomeState extends State<DosageHome> {
                               ),
                               GestureDetector(
                                 child: Text(
-                                  "Change Treatment",
+                                  "Change Treatments List",
                                   style: TextStyle(
                                     fontSize: 20,
                                     color: Colors.white,

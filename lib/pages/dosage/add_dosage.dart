@@ -108,6 +108,7 @@ class AddDosage extends StatelessWidget {
                         'unit': unit.text,
                       }).whenComplete(() {
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const Dosagelist()));
+                        Fluttertoast.showToast(msg: "New medication added");
                       });
                     },
                     child: const Text(

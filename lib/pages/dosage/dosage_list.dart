@@ -84,8 +84,10 @@ class _DosagelistState extends State<Dosagelist> {
                       ),
                       Padding(
                         padding: EdgeInsets.only(
-                          left: 3,
-                          right: 3,
+                          left: 5,
+                          right: 5,
+                          top: 7,
+                          bottom: 10,
                         ),
                         child: ListTile(
                           shape: RoundedRectangleBorder(

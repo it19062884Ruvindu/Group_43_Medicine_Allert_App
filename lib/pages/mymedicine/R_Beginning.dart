@@ -41,7 +41,7 @@ class _RSplashState extends State<RSplash> {
 
             Container(
               child: Text(
-                'MY MEDICIE LIST',
+                'MY MEDICINE LIST',
                 style: TextStyle(
                     color: Color(0xFF00838F),
                     fontWeight: FontWeight.bold,
