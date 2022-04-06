@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:our_medicine_alert_43/pages/main/animation_welcome.dart';
 import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 import '../../model/user_model.dart';
-import '../doctorvisit/add_channel.dart';
+import '../doctorvisit/channel_home.dart';
 import '../mymedicine/medicine_list.dart';
 import '../mymedicine/R_Beginning.dart';
-import '../doctorvisit/channel_list.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -197,7 +196,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => addchannel()));
+                            MaterialPageRoute(builder: (_) => ChannelHome()));
                       },
                       color: const Color(0xFF00838F),
                       child: Container(
