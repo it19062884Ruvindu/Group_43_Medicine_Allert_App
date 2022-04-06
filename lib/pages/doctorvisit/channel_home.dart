@@ -199,7 +199,7 @@ class _ChannelHomeState extends State<ChannelHome> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Add new",
+                                "Place Appointment",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 12),
                               ),
@@ -258,7 +258,7 @@ class _ChannelHomeState extends State<ChannelHome> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Text(
-                                "Edit & remove",
+                                "Edit Appointment Details",
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 12),
                               ),
@@ -267,7 +267,7 @@ class _ChannelHomeState extends State<ChannelHome> {
                               ),
                               GestureDetector(
                                 child: Text(
-                                  "Update & Remove Appointment",
+                                  "View & Edit Appointment",
                                   style: TextStyle(
                                     fontSize: 18,
                                     color: Colors.white,
