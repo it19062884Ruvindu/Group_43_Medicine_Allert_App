@@ -194,7 +194,7 @@ class _EditVaccinationState extends State<EditVaccination> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Update Medicine"),
+        title: const Text("Update Vacination"),
         titleTextStyle: const TextStyle(
           color: Color(0xFFFFFFFF),
           fontWeight: FontWeight.bold,
