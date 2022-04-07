@@ -4,28 +4,28 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:our_medicine_alert_43/pages/main/splash.dart';
 
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-FlutterLocalNotificationsPlugin();
+    FlutterLocalNotificationsPlugin();
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  var initializationSettingsAndroid = AndroidInitializationSettings('codex_logo');
+  var initializationSettingsAndroid =
+      AndroidInitializationSettings('codex_logo');
   var initializationSettingsIOS = IOSInitializationSettings(
     requestAlertPermission: true,
     requestBadgePermission: true,
-    requestSoundPermission :true,
+    requestSoundPermission: true,
     // onDidReceiveLocalNotification:(int id) async {};
   );
 
   var initializationSettings = InitializationSettings(
-      android: initializationSettingsAndroid
-      , iOS: initializationSettingsIOS
-  );
+      android: initializationSettingsAndroid, iOS: initializationSettingsIOS);
 
-  await flutterLocalNotificationsPlugin.initialize(initializationSettings,
+  await flutterLocalNotificationsPlugin.initialize(
+    initializationSettings,
     onSelectNotification: (payload) async {
-      if(payload != null){
+      if (payload != null) {
         debugPrint('notification payload: ' + payload);
       }
     },
@@ -35,7 +35,6 @@ Future<void> main() async {
 }
 
 class MyApp extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

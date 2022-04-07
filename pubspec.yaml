@@ -33,6 +33,8 @@ dependencies:
   fluttertoast: ^8.0.9
   flutter_svg: ^1.0.3
   flutter_local_notifications: ^9.4.0
+  flutter_native_timezone: ^2.0.0
+  flutter_clean_calendar: ^1.1.0
   animated_splash_screen:
   flutter:
     sdk: flutter

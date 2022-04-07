@@ -99,7 +99,6 @@ class _HomePageState extends State<HomePage> {
                         width: double.infinity,
                         child: const Text(
                           "Treatments",
-
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -162,8 +161,10 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(36),
                       ),
                       onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => VaccinationSplash()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => VaccinationSplash()));
                       },
                       color: const Color(0xFF00838F),
                       child: Container(

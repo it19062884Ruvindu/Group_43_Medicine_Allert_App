@@ -1,3 +1,4 @@
+import 'dart:collection';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:our_medicine_alert_43/pages/dosage/edit_dosage.dart';
 import 'package:our_medicine_alert_43/pages/dosage/add_dosage.dart';
@@ -12,7 +13,8 @@ class Dosagelist extends StatefulWidget {
 
 class _DosagelistState extends State<Dosagelist> {
   final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('dosages').snapshots();
+  FirebaseFirestore.instance.collection('dosages').snapshots();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,10 +25,16 @@ class _DosagelistState extends State<Dosagelist> {
         },
         child: Row(
           // Replace with a Row for horizontal icon + text
-          children: <Widget>[Icon(Icons.add), Text("ADD",  style: TextStyle(
-            fontSize: 12,
-            color: Colors.white,
-          ), )],
+          children: <Widget>[
+            Icon(Icons.add),
+            Text(
+              "ADD",
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.white,
+              ),
+            )
+          ],
         ),
       ),
       appBar: AppBar(
@@ -37,13 +45,12 @@ class _DosagelistState extends State<Dosagelist> {
           color: Color(0xFFFFFFFF),
           fontWeight: FontWeight.bold,
           fontSize: 20,
-
         ),
         //backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
-          onPressed: (){
+          onPressed: () {
             Navigator.of(context).pop();
           },
         ),
@@ -67,6 +74,8 @@ class _DosagelistState extends State<Dosagelist> {
             child: ListView.builder(
               itemCount: snapshot.data!.docs.length,
               itemBuilder: (_, index) {
+                Timestamp showDate =
+                snapshot.data!.docChanges[index].doc['showDate'];
                 return GestureDetector(
                   onTap: () {
                     Navigator.pushReplacement(
@@ -90,30 +99,55 @@ class _DosagelistState extends State<Dosagelist> {
                           bottom: 10,
                         ),
                         child: ListTile(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                            side: BorderSide(
-                              color: Colors.black,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(
+                                color: Colors.black,
+                              ),
                             ),
-                          ),
-                          title: Text(
-                            snapshot.data!.docChanges[index].doc['medicine'],
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          subtitle: Text(
-                            snapshot.data!.docChanges[index].doc['unit'],
-                            style: TextStyle(
-                              fontSize: 15,
-                            ),
-                          ),
-                          contentPadding: EdgeInsets.symmetric(
-                            vertical: 12,
-                            horizontal: 16,
-                          ),
-                        ),
+                            title: Text(snapshot
+                                .data!.docChanges[index].doc['medicine'] +
+                                " - " +
+                                DateTime.parse(showDate.toDate().toString())
+                                    .toString()
+                                    .split(' ')[0]),
+                            subtitle: Text(
+                                snapshot.data!.docChanges[index].doc['unit']),
+                            leading: const CircleAvatar(
+                                backgroundImage: NetworkImage(
+                                    "https://unsplash.com/photos/kfJkpeI6Lgc")),
+                            trailing: Wrap(
+                              spacing: 12,
+                              children: <Widget>[
+                                IconButton(
+                                    icon: Icon(Icons.notifications,
+                                        color: Colors.red),
+                                    onPressed: () {
+                                      Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (_) => EditDosage(
+                                                  docid: snapshot
+                                                      .data!.docs[index])));
+                                    }),
+                                IconButton(
+                                  icon: Icon(Icons.edit
+                                    // ,
+                                    // color: _subscribed == true
+                                    //     ? Colors.red
+                                    //     : Colors.grey
+                                  ),
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (_) => EditDosage(
+                                                docid: snapshot
+                                                    .data!.docs[index])));
+                                  },
+                                ),
+                              ],
+                            )),
                       ),
                     ],
                   ),
