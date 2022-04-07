@@ -30,12 +30,28 @@ class _medicinelistState extends State<medicinelist> {
         },
         child: Icon(
           Icons.add,
+          color: Color.fromRGBO(128, 0, 0, 1),
         ),
       ),
 
       appBar: AppBar(
-        title: Text('My Med'),
+        title: const Text("My Med"),
+        titleTextStyle: const TextStyle(
+          color: Color(0xFFFFFFFF),
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+        ),
+        backgroundColor: Color(0xFF00838F),
+        centerTitle: true,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Color(0xFFFFFFFF)),
+          onPressed: (){
+            Navigator.of(context).pop();
+          },
+        ),
       ),
+
 
       body: StreamBuilder(
         stream: _usersStream,
@@ -78,16 +94,24 @@ class _medicinelistState extends State<medicinelist> {
 
                       Padding(
                         padding: EdgeInsets.only(
-                          left: 8,
-                          right: 8,
+                          left: 20,
+                          right: 20,
+                          top: 2,
+                          bottom: 2,
                         ),
 
                         child: ListTile(
 
+                          leading: Icon(
+                            Icons.medical_services,
+                            color: Color.fromRGBO(128, 0, 0, 1),
+                            size: 50.0,
+                          ),
+
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(20),
                             side: BorderSide(
-                              color: Colors.black,
+                              color: Color.fromRGBO(250, 128, 114, 1),
                             ),
                           ),
 
@@ -96,11 +120,13 @@ class _medicinelistState extends State<medicinelist> {
                             style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(205, 92, 92, 1),
                             ),
+                            textAlign: TextAlign.center,
                           ),
 
                           subtitle: Text(
-                            snapshot.data!.docChanges[index].doc['content'],
+                            snapshot.data!.docChanges[index].doc['medamount'],
                             style: TextStyle(
                               fontSize: 15,
                             ),

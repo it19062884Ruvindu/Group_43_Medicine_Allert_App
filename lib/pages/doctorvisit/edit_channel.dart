@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../main.dart';
 import 'channel_list.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class EditChannel extends StatefulWidget {
   DocumentSnapshot docid;
@@ -44,7 +45,7 @@ class _EditChannelState extends State<EditChannel> {
       keyboardType: TextInputType.text,
       validator: (value) {
         if (value!.isEmpty) {
-          return ("Please Enter New Medicine Name");
+          return ("Please Enter Appointment Type");
         }
         return null;
       },
@@ -55,7 +56,7 @@ class _EditChannelState extends State<EditChannel> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.wallet_travel_rounded),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Medicine Name",
+        hintText: "Type(Channel/Report/Surgery)",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
@@ -68,7 +69,7 @@ class _EditChannelState extends State<EditChannel> {
       keyboardType: TextInputType.text,
       validator: (value) {
         if (value!.isEmpty) {
-          return ("Please Enter New Medicine Type");
+          return ("Please Enter Patient Name");
         }
         return null;
       },
@@ -77,9 +78,9 @@ class _EditChannelState extends State<EditChannel> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.wallet_travel_rounded),
+        prefixIcon: Icon(Icons.account_circle_outlined),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Type(Pill/Tablet/Liquid)",
+        hintText: "Patient Name",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
@@ -92,7 +93,7 @@ class _EditChannelState extends State<EditChannel> {
       keyboardType: TextInputType.text,
       validator: (value) {
         if (value!.isEmpty) {
-          return ("Please Enter New Medicine Brand and Company");
+          return ("Please Enter Patient Age");
         }
         return null;
       },
@@ -101,9 +102,9 @@ class _EditChannelState extends State<EditChannel> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.wallet_travel_rounded),
+        prefixIcon: Icon(Icons.align_vertical_bottom_sharp),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Medicine Brand/Company",
+        hintText: "Patient Age",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
@@ -116,7 +117,7 @@ class _EditChannelState extends State<EditChannel> {
       keyboardType: TextInputType.text,
       validator: (value) {
         if (value!.isEmpty) {
-          return ("Please Enter Added Medicine Amount ");
+          return ("Please Enter Patient Mobile Number");
         }
         return null;
       },
@@ -125,9 +126,9 @@ class _EditChannelState extends State<EditChannel> {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.wallet_travel_rounded),
+        prefixIcon: Icon(Icons.add_ic_call_outlined),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Medicine Amount",
+        hintText: "Patient Mobile Number",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
@@ -140,7 +141,7 @@ class _EditChannelState extends State<EditChannel> {
       keyboardType: TextInputType.datetime,
       validator: (value) {
         if (value!.isEmpty) {
-          return ("Please Enter The Expire Date for the Medicines");
+          return ("Please Enter The Appointment Date");
         }
         return null;
       },
@@ -151,7 +152,7 @@ class _EditChannelState extends State<EditChannel> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.date_range),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Expire Date",
+        hintText: "Appointment Date",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
@@ -170,7 +171,7 @@ class _EditChannelState extends State<EditChannel> {
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.content_paste),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-        hintText: "Any Condition",
+        hintText: "Appointment Details",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
@@ -194,6 +195,13 @@ class _EditChannelState extends State<EditChannel> {
               'appointmentDetails': appointmentDetails.text,
 
             }).whenComplete(() {
+              Fluttertoast.showToast(
+                  msg: "Appointment Successfully Updated!",
+                  gravity: ToastGravity.CENTER,
+                  backgroundColor: Color(0xFF00838F),
+                  textColor: Colors.white,
+                  fontSize: 20.0
+              );
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => ChannelList()));
             });
@@ -217,6 +225,13 @@ class _EditChannelState extends State<EditChannel> {
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             widget.docid.reference.delete().whenComplete(() {
+              Fluttertoast.showToast(
+                  msg: "Appointment Successfully Deleted!",
+                  gravity: ToastGravity.CENTER,
+                  backgroundColor: Color(0xFF00838F),
+                  textColor: Colors.white,
+                  fontSize: 20.0
+              );
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => ChannelList()));
             });

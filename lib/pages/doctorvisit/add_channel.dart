@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../main.dart';
 import 'channel_list.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class addchannel extends StatelessWidget {
 
@@ -61,7 +62,7 @@ class addchannel extends StatelessWidget {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.wallet_travel_rounded),
+        prefixIcon: Icon(Icons.account_circle_outlined),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Patient Name",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
@@ -85,7 +86,7 @@ class addchannel extends StatelessWidget {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.wallet_travel_rounded),
+        prefixIcon: Icon(Icons.align_vertical_bottom_sharp),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Patient Age",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
@@ -109,7 +110,7 @@ class addchannel extends StatelessWidget {
       },
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        prefixIcon: Icon(Icons.wallet_travel_rounded),
+        prefixIcon: Icon(Icons.add_ic_call_outlined),
         contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         hintText: "Patient Mobile Number",
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
@@ -177,6 +178,13 @@ class addchannel extends StatelessWidget {
               'appointmentDetails': appointmentDetails.text,
 
             }).whenComplete(() {
+              Fluttertoast.showToast(
+                  msg: "Appointment Successfully Submitted!",
+                  gravity: ToastGravity.CENTER,
+                  backgroundColor: Color(0xFF00838F),
+                  textColor: Colors.white,
+                  fontSize: 20.0
+              );
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => ChannelList()));
             });

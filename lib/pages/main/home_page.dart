@@ -4,10 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:our_medicine_alert_43/pages/main/animation_welcome.dart';
 import 'package:our_medicine_alert_43/pages/main/login_page.dart';
 import '../../model/user_model.dart';
-import '../doctorvisit/channel_home.dart';
+import '../doctorvisit/channel_StartUp.dart';
 import '../mymedicine/medicine_list.dart';
 import '../mymedicine/R_Beginning.dart';
-import '../doctorvisit/channel_list.dart';
 import '../vaccination/ui/vaccination_splash_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -199,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       onPressed: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => ChannelHome()));
+                            MaterialPageRoute(builder: (_) => ChannelStartUp()));
                       },
                       color: const Color(0xFF00838F),
                       child: Container(
