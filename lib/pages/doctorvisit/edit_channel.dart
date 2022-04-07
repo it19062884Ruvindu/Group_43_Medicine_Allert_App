@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../main.dart';
 import 'channel_list.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class EditChannel extends StatefulWidget {
   DocumentSnapshot docid;
@@ -194,6 +195,13 @@ class _EditChannelState extends State<EditChannel> {
               'appointmentDetails': appointmentDetails.text,
 
             }).whenComplete(() {
+              Fluttertoast.showToast(
+                  msg: "Appointment Successfully Updated!",
+                  gravity: ToastGravity.CENTER,
+                  backgroundColor: Color(0xFF00838F),
+                  textColor: Colors.white,
+                  fontSize: 20.0
+              );
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => ChannelList()));
             });
@@ -217,6 +225,13 @@ class _EditChannelState extends State<EditChannel> {
           minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             widget.docid.reference.delete().whenComplete(() {
+              Fluttertoast.showToast(
+                  msg: "Appointment Successfully Deleted!",
+                  gravity: ToastGravity.CENTER,
+                  backgroundColor: Color(0xFF00838F),
+                  textColor: Colors.white,
+                  fontSize: 20.0
+              );
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => ChannelList()));
             });

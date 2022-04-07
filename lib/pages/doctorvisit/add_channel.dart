@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../main.dart';
 import 'channel_list.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class addchannel extends StatelessWidget {
 
@@ -177,6 +178,13 @@ class addchannel extends StatelessWidget {
               'appointmentDetails': appointmentDetails.text,
 
             }).whenComplete(() {
+              Fluttertoast.showToast(
+                  msg: "Appointment Successfully Submitted!",
+                  gravity: ToastGravity.CENTER,
+                  backgroundColor: Color(0xFF00838F),
+                  textColor: Colors.white,
+                  fontSize: 20.0
+              );
               Navigator.pushReplacement(
                   context, MaterialPageRoute(builder: (_) => ChannelList()));
             });
